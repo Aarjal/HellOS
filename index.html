@@ -1,11 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/web/icon.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa37d9694f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- <header>Welcome to HELL </header>
+    <p>This is where you'll experience HELL</p>  the HELL will be a hover effect when one moves their mouse towards that area it will reveal its letter as H-E-L-L one by one slowly 1 word/sec in red font with blood drooling"
+     -->
+
+    <!-- This will be my apps container and bottom taskbar section -->
+    <div class="os-container">
+      <div id="os-apps"></div>
+      <div id="taskbar"></div>
+
+      <!-- App window -->
+      <div class="os-window" draggable="true">
+        <!-- This will be my top window -->
+        <div class="window-bar">
+          <!-- Icons -->
+          <div class="brand"></div>
+
+          <!-- Buttons for cross,minimize,full-screen -->
+          <div class="buttons">
+            <button id="maximize">
+              <i class="fa fa-window-maximize"></i>
+            </button>
+            <button id="minimize">
+              <i class="fa fa-window-restore"></i>
+            </button>
+            <button id="cross">
+              <i class="fa fa-window-times"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- This will be my main app -->
+        <div class="app" id="app-main"></div>
+      </div>
+      <div class="app-hide"></div>
+    </div>
+  </body>
 </html>
