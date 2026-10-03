@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebOS</title>
@@ -20,8 +20,8 @@
       src="https://kit.fontawesome.com/fa37d9694f.js"
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- <header>Welcome to HELL </header>
     <p>This is where you'll experience HELL</p>  the HELL will be a hover effect when one moves their mouse towards that area it will reveal its letter as H-E-L-L one by one slowly 1 word/sec in red font with blood drooling"
      -->
@@ -29,48 +29,48 @@
     <!-- This will be my apps container and bottom taskbar section -->
     <div class="os-container">
       <div id="os-apps">
-          <div class="app">
-            <img src="assets/images/apps/file-manager.png" alt="file-manager">
-          </div>
-
+        <div class="app">
+          <img src="assets/images/apps/file-manager.png" alt="file-manager" />
+          <p>File Manager</p>
+        </div>
       </div>
       <div id="taskbar"></div>
     </div>
-      <!-- App window -->
-      <div class="os-window" draggable="true">
-        <!-- This will be my top window -->
-        <div class="window-bar">
-          <!-- Icons -->
-          <div class="brand"></div>
+    <!-- App window -->
+    <div class="os-window" draggable="true">
+      <!-- This will be my top window -->
+      <div class="window-bar">
+        <!-- Icons -->
+        <div class="brand"></div>
 
-          <!-- Buttons for cross,minimize,full-screen -->
-          <div class="buttons">
-            <button id="maximize">
-              <i class="fa fa-window-maximize"></i>
-            </button>
-            <button id="minimize">
-              <i class="fa fa-window-restore"></i>
-            </button>
-            <button id="cross">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
+        <!-- Buttons for cross,minimize,full-screen -->
+        <div class="buttons">
+          <button id="maximize">
+            <i class="fa fa-window-maximize"></i>
+          </button>
+          <button id="minimize">
+            <i class="fa fa-window-restore"></i>
+          </button>
+          <button id="cross">
+            <i class="fa fa-times"></i>
+          </button>
         </div>
-
-        <!-- This will be my main app -->
-        <div class="app" id="app-main"></div>
       </div>
-      <div class="app-hide"></div>
 
-      <!-- Context menu -->
-      <nav id="os-menu">
-        <ul>
-          <li><a href="javascript:;">Open</a></li>
-          <li><a href="javascript:;">Open as admin</a></li>
-          <li><a href="javascript:;">Remove</a></li>
-          <li><a href="javascript:;">Properties</a></li>
-        </ul>
-      </nav>
+      <!-- This will be my main app -->
+      <div class="app" id="app-main"></div>
+    </div>
+    <div class="app-hide"></div>
+
+    <!-- Context menu -->
+    <nav id="os-menu">
+      <ul>
+        <li><a href="javascript:;">Open</a></li>
+        <li><a href="javascript:;">Open as admin</a></li>
+        <li><a href="javascript:;">Remove</a></li>
+        <li><a href="javascript:;">Properties</a></li>
+      </ul>
+    </nav>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
