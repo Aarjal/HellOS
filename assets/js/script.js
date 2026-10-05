@@ -40,3 +40,86 @@ function open (tag) {
 function close  (tag) {
     tag.style.display = "none"
 }
+
+function window_open (id) {
+    // click.play()
+    brand_window.innerHTML = ""
+    app_main.innerHTML = ""
+    init_window()
+
+    let main = document.querySelector("#" + id)
+
+    let img = document.createElement("img")
+    img.src = main.childNodes[0].src
+    img.setAttribute("alt", main.childNodes[0].getAttribute("alt"))
+
+    let p = document.createElement("p")
+    p.innerText = main.childNodes[1].innerText
+    brand_window.appendChild(img)
+    brand_window.appendChild(p)
+
+    open(os_window)
+}
+
+function init_window() {
+    close(shorter)
+    maximise.onclick = e => {
+        // click.play()
+        maximise_window()
+    }
+    shorter.onclick = e => {
+        // click.play()
+        shorter_window()
+    }
+    cross.onclick = e => {
+        // click.play()
+        close(os_window)
+    }
+}
+
+function maximise_window () {
+    open(shorter)
+    close(maximise)
+    window.restoreX = os_window.style.left
+    window.restoreY = os_window.style.top
+    os_window.style.top = 0
+    os_window.style.left = 0
+    os_window.style.width = "100%"
+    os_window.style.height = "100vh"
+}
+
+function shorter_window () {
+    open(maximise)
+    close(shorter)
+    os_window.style.top = window.restoreY
+    os_window.style.left = window.restoreX
+    os_window.style.width = "60%"
+    os_window.style.height = "60vh"
+}
+
+function open_menu (e, id) {
+    e.preventDefault()
+    menu.classList.add("active")
+    menu.style.top = e.pageY + 5 + "px"
+    menu.style.left = e.pageX + 5 + "px"
+    return false
+}
+
+window.onclick = e => {
+    if (menu.classList.contains ("active")) {
+        menu.classList.remove("active")
+    }
+}
+
+os_window.ondragend = e => {
+    let go_top = e.pageY
+    let go_left = e.pageX
+    if(go_top < 0) {
+        go_top= e
+    }
+    if(go_left < 0) {
+        go_left = 0
+    }
+    os_window.style.top = go_top + "px"
+    os_window.style.left = go_left + "px"
+}
