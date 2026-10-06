@@ -54,7 +54,6 @@
     border-radius:  10px;
     overflow: hidden;
     resize: both;
-    transition: 0.3s;
 }
 .os-window .window-bar{
     display: flex;

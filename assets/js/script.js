@@ -111,15 +111,59 @@ window.onclick = e => {
     }
 }
 
-os_window.ondragend = e => {
-    let go_top = e.pageY
-    let go_left = e.pageX
-    if(go_top < 0) {
-        go_top= e
-    }
-    if(go_left < 0) {
-        go_left = 0
-    }
-    os_window.style.top = go_top + "px"
-    os_window.style.left = go_left + "px"
-}
+// os_window.ondragend = e => {
+//     let go_top = e.pageY
+//     let go_left = e.pageX
+//     if(go_top < 0) {
+//         go_top= e
+//     }
+//     if(go_left < 0) {
+//         go_left = 0
+//     }
+//     os_window.style.top = go_top + "px"
+//     os_window.style.left = go_left + "px"
+// }
+
+let isDragging = false
+let offsetX = 0
+let offsetY = 0
+
+const windowBar = document.querySelector(".window-bar")
+
+windowBar.addEventListener("mousedown", e => {
+    // Don't start dragging when clicking a window button
+    if (e.target.closest("button")) return
+
+    isDragging = true
+
+    const rect = os_window.getBoundingClientRect()
+
+    offsetX = e.clientX - rect.left
+    offsetY = e.clientY - rect.top
+
+    windowBar.style.cursor = "grabbing"
+})
+
+document.addEventListener("mousemove", e => {
+    if (!isDragging) return
+
+    let left = e.clientX - offsetX
+    let top = e.clientY - offsetY
+
+    // To keep the window inside the viewport
+    const maxLeft = window.innerWidth - os_window.offsetWidth
+    const maxTop = window.innerHeight - os_window.offsetHeight
+
+    left = Math.max(0, Math.min(left, maxLeft))
+    top = Math.max(0, Math.min(top, maxTop))
+
+    os_window.style.left = left + "px"
+    os_window.style.top = top + "px"
+})
+
+document.addEventListener("mouseup", () => {
+    if (!isDragging) return
+
+    isDragging = false
+    windowBar.style.cursor = "grab"
+})
