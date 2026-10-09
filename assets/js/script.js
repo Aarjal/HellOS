@@ -41,8 +41,61 @@ function close  (tag) {
     tag.style.display = "none"
 }
 
-function window_open (id) {
-    // click.play()
+const appContents = {
+    "file-manager": `
+        <div class="app-content">
+            <h2>File Manager</h2>
+            <p>Browse your files and folders.</p>
+            <div class="file-grid">
+                <div class="file-item">📁 Documents</div>
+                <div class="file-item">📁 Downloads</div>
+                <div class="file-item">🖼️ Pictures</div>
+                <div class="file-item">🎵 Music</div>
+            </div>
+        </div>
+    `,
+
+    "recycle-bin": `
+        <div class="app-content">
+            <h2>Recycle Bin</h2>
+            <p>Your Recycle Bin is currently empty.</p>
+        </div>
+    `,
+
+    "settings": `
+        <div class="app-content">
+            <h2>Settings</h2>
+            <p>Customize your HELL_OS experience.</p>
+
+            <div class="setting-item">
+                <span>Dark theme</span>
+                <input type="checkbox" checked>
+            </div>
+
+            <div class="setting-item">
+                <span>Show desktop icons</span>
+                <input type="checkbox" checked>
+            </div>
+
+            <div class="setting-item">
+                <span>System notifications</span>
+                <input type="checkbox">
+            </div>
+        </div>
+    `,
+
+    "system-information": `
+        <div class="app-content">
+            <h2>System Information</h2>
+            <p><strong>Operating System:</strong> HELL_OS</p>
+            <p><strong>Version:</strong> 0.1.0</p>
+            <p><strong>Environment:</strong> Web Browser</p>
+            <p><strong>Status:</strong> In Development</p>
+        </div>
+    `
+}
+
+function window_open(id) {
     brand_window.innerHTML = ""
     app_main.innerHTML = ""
     init_window()
@@ -50,13 +103,21 @@ function window_open (id) {
     let main = document.querySelector("#" + id)
 
     let img = document.createElement("img")
-    img.src = main.childNodes[0].src
-    img.setAttribute("alt", main.childNodes[0].getAttribute("alt"))
+    img.src = main.children[0].src
+    img.alt = main.children[0].alt
 
     let p = document.createElement("p")
-    p.innerText = main.childNodes[1].innerText
+    p.innerText = main.children[1].innerText
+
     brand_window.appendChild(img)
     brand_window.appendChild(p)
+
+    app_main.innerHTML = appContents[id] || `
+        <div class="app-content">
+            <h2>Application</h2>
+            <p>No content available.</p>
+        </div>
+    `
 
     open(os_window)
 }
@@ -167,3 +228,4 @@ document.addEventListener("mouseup", () => {
     isDragging = false
     windowBar.style.cursor = "grab"
 })
+
