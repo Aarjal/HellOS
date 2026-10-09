@@ -143,3 +143,41 @@
 #os-menu.active {
     display: block;
 }
+
+#app-main {
+    padding: 20px;
+    color: #222;
+}
+
+.app-content h2 {
+    margin-bottom: 12px;
+    color: #150222;
+}
+
+.app-content p {
+    margin-bottom: 12px;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.file-item {
+    padding: 18px 10px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 350px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
