@@ -46,10 +46,10 @@ const appContents = {
         <div class="app-content">
             <p>Browse your files and folders.</p>
             <div class="file-grid">
-                <div class="file-item">📁 Documents</div>
-                <div class="file-item">⬇ Downloads</div>
-                <div class="file-item">🎴 Pictures</div>
-                <div class="file-item">🎵 Music</div>
+                <div class="file-item"> Documents</div>
+                <div class="file-item"> Downloads</div>
+                <div class="file-item"> Pictures</div>
+                <div class="file-item"> Music</div>
             </div>
         </div>
     `,
