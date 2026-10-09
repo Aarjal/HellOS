@@ -44,12 +44,11 @@ function close  (tag) {
 const appContents = {
     "file-manager": `
         <div class="app-content">
-            <h2>File Manager</h2>
             <p>Browse your files and folders.</p>
             <div class="file-grid">
                 <div class="file-item">📁 Documents</div>
-                <div class="file-item">📁 Downloads</div>
-                <div class="file-item">🖼️ Pictures</div>
+                <div class="file-item">⬇ Downloads</div>
+                <div class="file-item">🎴 Pictures</div>
                 <div class="file-item">🎵 Music</div>
             </div>
         </div>
@@ -57,15 +56,14 @@ const appContents = {
 
     "recycle-bin": `
         <div class="app-content">
-            <h2>Recycle Bin</h2>
             <p>Your Recycle Bin is currently empty.</p>
         </div>
     `,
 
     "settings": `
         <div class="app-content">
-            <h2>Settings</h2>
-            <p>Customize your HELL_OS experience.</p>
+            <p>Customize your Hell-OS experience.<br>(but only after a while..
+             please bear with just the show for now (┬┬﹏┬┬))</p>
 
             <div class="setting-item">
                 <span>Dark theme</span>
@@ -86,7 +84,6 @@ const appContents = {
 
     "system-information": `
         <div class="app-content">
-            <h2>System Information</h2>
             <p><strong>Operating System:</strong> HELL_OS</p>
             <p><strong>Version:</strong> 0.1.0</p>
             <p><strong>Environment:</strong> Web Browser</p>
