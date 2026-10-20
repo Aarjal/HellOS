@@ -9,7 +9,10 @@
 .os-container {
     width: 100%;
     min-height: 100vh;
-    background: #150222;
+    background-image: url(../images/web/wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #os-apps{
     width: 100%;
