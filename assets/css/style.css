@@ -41,9 +41,7 @@
     bottom: 0;
     width: 100%;
     height: 45px;
-    background: rgb(15, 144, 95);
-    box-shadow: 0 -3px 5px rgba(46, 255, 74, 0.3),
-                0 -3px 10px rgba(46, 255, 74, 0.3);
+    background: rgb(52, 68, 62);
 }
 .os-window{
     position: absolute;
