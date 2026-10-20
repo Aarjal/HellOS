@@ -2,7 +2,7 @@
 
 A browser-based desktop environment inspired by traditional operating systems — built with HTML, CSS and JavaScript.
 
-> HellOS is currently a work in progress. The current version is an early playable/demo build.
+> HellOS is currently a work in progress. The current version is an early playable build.
 
 [Click here for demo :)](https://aarjal.github.io/HellOS/)
 
